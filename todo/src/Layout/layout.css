@@ -1,0 +1,10 @@
+.layout {
+  background-color: #FCFCFC;
+  height: 1024px;
+}
+.title {
+    font-family: "Open Sans";
+    font-size: 36px;
+    color: #444444;
+    font-weight:300;
+}
