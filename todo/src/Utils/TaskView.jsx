@@ -10,8 +10,18 @@ function TaskView(props) {
       <Row>
         <Col sm="3">
           <div className="orderingCls">
-            <img src={UpArrow} alt="" className="arrows"></img>
-            <img src={downArrow} alt="" className="arrows"></img>
+            <img
+              src={UpArrow}
+              alt=""
+              className="arrows"
+              onClick={(evt) => props.handleUpDown(props.taskType, 'UP', props.id, props.index)}
+            ></img>
+            <img
+              src={downArrow}
+              alt=""
+              className="arrows"
+              onClick={(evt) => props.handleUpDown(props.taskType, 'DOWN', props.id, props.index)}
+            ></img>
             <div
               onClick={
                 props.handleComplete !== undefined
@@ -19,7 +29,7 @@ function TaskView(props) {
                   : null
               }
             >
-              <img src={props.ImgSrc} alt="" />
+              <img src={props.ImgSrc} alt="" className="hoverCls" />
             </div>
           </div>
         </Col>

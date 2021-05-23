@@ -10,6 +10,9 @@ function CompletedTask(props) {
       className="completedText"
       text={props.task.task}
       id={props.task.id}
+      handleUpDown={props.handleUpDown}
+      taskType="COMPLETED"
+      index={props.index}
     />
   );
 }

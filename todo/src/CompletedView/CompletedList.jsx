@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../Containers/utils.css';
 import CompletedTask from './CompletedTask';
 
 function CompletedList(props) {
   return (
     <div>
-      {props.completedList.map((task, id) => {
+      {props.completedList.map((task, index) => {
         return (
-          <div key={id}>
-            <CompletedTask task={task}/>
+          <div key={index}>
+            <CompletedTask
+              task={task}
+              handleUpDown={props.handleUpDown}
+              index={index}
+            />
           </div>
         );
       })}

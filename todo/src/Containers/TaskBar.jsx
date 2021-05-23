@@ -73,9 +73,11 @@ function TaskBar() {
     setErrMsg('');
     setTaskValue(event.target.value);
   };
+
   const handleClick = () => {
     setInputVisibleFlag(!inputVisibleFlag);
   };
+
   const addTask = () => {
     setInputVisibleFlag(false);
     if (taskValue.length === 0) {
@@ -93,6 +95,56 @@ function TaskBar() {
     setTaskValue('');
     dispatch(tasksDataSlice.actions.addNewTask(payload));
   };
+
+  const arrangeUtil = (list, taskId, operationType, index) => {
+    const updatedList = [...list];
+    if (operationType === 'UP') {
+      if (index === 0) {
+        return updatedList;
+      }
+      for (let i = 1; i < updatedList.length; i++) {
+        if (updatedList[i].id === taskId && index === i) {
+          //Swap the Tasks.
+          const temp = updatedList[i];
+          updatedList[i] = updatedList[i - 1];
+          updatedList[i - 1] = temp;
+          break;
+        }
+      }
+      return updatedList;
+    }
+    else {
+      if (index === list.length - 1) {
+        return updatedList;
+      }
+      for (let i = 0; i < updatedList.length - 1; i++) {
+        if (updatedList[i].id === taskId && index === i) {
+          //Swap the Tasks.
+          const temp = updatedList[i];
+          updatedList[i] = updatedList[i + 1];
+          updatedList[i + 1] = temp;
+          break;
+        }
+      }
+      return updatedList;
+    }
+  };
+  const reArrangeTODOList = (operationType, taskId, index) => {
+    const updatedList = arrangeUtil(todoList, taskId, operationType, index);
+    setTodoList(updatedList);
+  };
+
+  const reArrangeCompletedList = (operationType, taskId, index) => {
+    const updatedList = arrangeUtil(completedList, taskId, operationType, index);
+    setCompletedList(updatedList);
+  }
+
+  const handleUpDown = (taskType, operationType, taskId, index) => {
+    taskType === 'TODO'
+      ? reArrangeTODOList(operationType, taskId, index)
+      : reArrangeCompletedList(operationType, taskId, index);
+  };
+
   return (
     <Container fluid>
       <Row>
@@ -129,12 +181,19 @@ function TaskBar() {
         <Col>
           <br />
           <h1 className="titleInside">{todoTitle}</h1>
-          <TodoList todoList={todoList} addToCompleted={addToCompleted} />
+          <TodoList
+            todoList={todoList}
+            addToCompleted={addToCompleted}
+            handleUpDown={handleUpDown}
+          />
         </Col>
         <Col>
           <br />
           <h1 className="titleInside">{completedTitle}</h1>
-          <CompletedList completedList={completedList} />
+          <CompletedList
+            completedList={completedList}
+            handleUpDown={handleUpDown}
+          />
         </Col>
       </Row>
     </Container>

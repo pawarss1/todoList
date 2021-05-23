@@ -1,13 +1,18 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Todo from './Todo';
 
 function TodoList(props) {
   return (
     <div>
-      {props.todoList.map((task, id) => {
+      {props.todoList.map((task, index) => {
         return (
-          <div key={id}>
-            <Todo task={task} addToCompleted={props.addToCompleted}/>
+          <div key={index}>
+            <Todo
+              task={task}
+              addToCompleted={props.addToCompleted}
+              handleUpDown={props.handleUpDown}
+              index={index}
+            />
           </div>
         );
       })}

@@ -1,50 +1,56 @@
 .btn {
-    width: 100%;
+  width: 100%;
 }
-.titleInside{
-    font-family: 'Open Sans';
-    font-size: 20px;
-    color: #8B9DA7;
-    text-align: left;
+.titleInside {
+  font-family: 'Open Sans';
+  font-size: 20px;
+  color: #8b9da7;
+  text-align: left;
 }
 
 .group {
-    display: flex;
+  display: flex;
 }
 .leftAllign {
-    text-align: left;
+  text-align: left;
 }
 .completedText {
-    text-align: left;
-    text-decoration: line-through;
+  text-align: left;
+  text-decoration: line-through;
 }
 .imgCls {
-    position: absolute;
-    left: 3vw;
-    top: 2vh;
+  position: absolute;
+  left: 3vw;
+  top: 2vh;
 }
 .textCls {
-    color: #0082D4;
+  color: #0082d4;
 }
 
 .errCls {
-    color: #c22a22;
-    margin-left: 1vw;
+  color: #c22a22;
+  margin-left: 1vw;
 }
 .utilityBtnCls {
-    background-color: #0082D4;
-    color: #fff;
-    border: #fff;
+  background-color: #0082d4;
+  color: #fff;
+  border: #fff;
 }
 .inputClsErr {
-    border: 2px solid #c22a22;
-    width: 100%;
+  border: 2px solid #c22a22;
+  width: 100%;
 }
 
 .orderingCls {
-    display:flex;
+  display: flex;
 }
 .arrows {
-    max-width: 20px;
-    max-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+}
+.arrows:hover {
+  cursor: pointer;
+}
+.hoverCls:hover {
+  cursor: pointer;
 }
