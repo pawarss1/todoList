@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux';
 import { tasksDataSlice } from '../Store/tasksDataSlice';
 import { useDispatch } from 'react-redux';
 import AddBlue from '../assets/add-blue.svg';
+import AddGrey from '../assets/add-gray.svg';
 
 function TaskBar() {
   const tasksGlobal = useSelector((globalStore) => globalStore.tasks);
@@ -76,6 +77,7 @@ function TaskBar() {
     setInputVisibleFlag(!inputVisibleFlag);
   };
   const addTask = () => {
+    setInputVisibleFlag(false);
     if (taskValue.length === 0) {
       setErr(true);
       setErrMsg(errMsgEmpty);
@@ -96,11 +98,14 @@ function TaskBar() {
       <Row>
         <Col sm="8">
           {inputVisibleFlag === true ? (
-            <input
-              className="btn"
-              onChange={handleInputChange}
-              value={taskValue}
-            ></input>
+            <div>
+              <img src={AddGrey} alt="" className="imgCls"></img>
+              <input
+                className="btn"
+                onChange={handleInputChange}
+                value={taskValue}
+              ></input>
+            </div>
           ) : (
             <button className="btn" onClick={handleClick}>
               <img src={AddBlue} alt="" className="imgCls"></img>
@@ -109,19 +114,25 @@ function TaskBar() {
           )}
         </Col>
         <Col sm="2">
-          <button onClick={addTask}>Add</button>
+          <button onClick={addTask} className="utilityBtnCls">
+            Add
+          </button>
         </Col>
         <Col sm="2">
-          <button onClick={handleSort}>Sort</button>
+          <button onClick={handleSort} className="utilityBtnCls">
+            Sort
+          </button>
         </Col>
       </Row>
       <Row>{errFlag && <p className="errCls">{errMsg}</p>}</Row>
       <Row>
         <Col>
+          <br />
           <h1 className="titleInside">{todoTitle}</h1>
           <TodoList todoList={todoList} addToCompleted={addToCompleted} />
         </Col>
         <Col>
+          <br />
           <h1 className="titleInside">{completedTitle}</h1>
           <CompletedList completedList={completedList} />
         </Col>

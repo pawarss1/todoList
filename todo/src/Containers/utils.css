@@ -5,6 +5,7 @@
     font-family: 'Open Sans';
     font-size: 20px;
     color: #8B9DA7;
+    text-align: left;
 }
 
 .group {
@@ -28,4 +29,22 @@
 
 .errCls {
     color: #c22a22;
+    margin-left: 1vw;
+}
+.utilityBtnCls {
+    background-color: #0082D4;
+    color: #fff;
+    border: #fff;
+}
+.inputClsErr {
+    border: 2px solid #c22a22;
+    width: 100%;
+}
+
+.orderingCls {
+    display:flex;
+}
+.arrows {
+    max-width: 20px;
+    max-height: 20px;
 }
