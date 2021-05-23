@@ -7,6 +7,7 @@ function MiddleContainer() {
   return (
     <div className="layout">
       <h1 className="title">{title}</h1>
+      <br />
       <TaskBar />
     </div>
   );

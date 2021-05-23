@@ -112,8 +112,7 @@ function TaskBar() {
         }
       }
       return updatedList;
-    }
-    else {
+    } else {
       if (index === list.length - 1) {
         return updatedList;
       }
@@ -135,9 +134,14 @@ function TaskBar() {
   };
 
   const reArrangeCompletedList = (operationType, taskId, index) => {
-    const updatedList = arrangeUtil(completedList, taskId, operationType, index);
+    const updatedList = arrangeUtil(
+      completedList,
+      taskId,
+      operationType,
+      index
+    );
     setCompletedList(updatedList);
-  }
+  };
 
   const handleUpDown = (taskType, operationType, taskId, index) => {
     taskType === 'TODO'
@@ -154,12 +158,17 @@ function TaskBar() {
               <img src={AddGrey} alt="" className="imgCls"></img>
               <input
                 className="btn"
+                style={{ border: '2px solid black' }}
                 onChange={handleInputChange}
                 value={taskValue}
               ></input>
             </div>
           ) : (
-            <button className="btn" onClick={handleClick}>
+            <button
+              className="btn"
+              style={{ backgroundColor: '#FFF', border: '1px solid #E2E7EC' }}
+              onClick={handleClick}
+            >
               <img src={AddBlue} alt="" className="imgCls"></img>
               <p className="textCls">Add Task</p>
             </button>

@@ -1,6 +1,12 @@
 .btn {
   width: 100%;
 }
+.btn:hover {
+  cursor: pointer;
+}
+.inputTaskCls {
+  width: 100%;
+}
 .titleInside {
   font-family: 'Open Sans';
   font-size: 20px;
@@ -35,6 +41,9 @@
   background-color: #0082d4;
   color: #fff;
   border: #fff;
+}
+.utilityBtnCls:hover {
+  cursor: pointer;
 }
 .inputClsErr {
   border: 2px solid #c22a22;

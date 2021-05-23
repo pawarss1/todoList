@@ -1,6 +1,7 @@
 .layout {
   background-color: #FCFCFC;
-  height: 1024px;
+  min-height: 100vh;
+  height: 100vh;
 }
 .title {
     font-family: "Open Sans Light";
