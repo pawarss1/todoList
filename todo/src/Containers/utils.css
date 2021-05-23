@@ -63,3 +63,6 @@
 .hoverCls:hover {
   cursor: pointer;
 }
+.verticalPagingCls:hover{
+  cursor: pointer;
+}
