@@ -6,3 +6,26 @@
     font-size: 20px;
     color: #8B9DA7;
 }
+
+.group {
+    display: flex;
+}
+.leftAllign {
+    text-align: left;
+}
+.completedText {
+    text-align: left;
+    text-decoration: line-through;
+}
+.imgCls {
+    position: absolute;
+    left: 3vw;
+    top: 2vh;
+}
+.textCls {
+    color: #0082D4;
+}
+
+.errCls {
+    color: #c22a22;
+}
